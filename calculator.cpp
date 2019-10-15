@@ -11,7 +11,6 @@ struct Res {
 
 // check if symbol is '-' or number
 Res get_number(const char* s) {
-	// add '-'
 	int signum = 1;
 	if (*s == '-') {
 		signum = -1;
