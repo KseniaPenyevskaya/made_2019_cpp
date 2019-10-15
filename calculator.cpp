@@ -8,6 +8,8 @@ struct Res {
 };
 
 //this expression parser based on recursive descent method
+//excpressions include: "*", "+", "/", "-" and unary minus
+
 
 // check if symbol is '-' or number
 Res get_number(const char* s) {
@@ -30,7 +32,7 @@ Res get_number(const char* s) {
 	return {signum*number, s};
 }
 
-// 
+//multiplication and division (first priority)
 Res mult_div(const char* s) {
 	Res result;
 	Res left = get_number(s);
@@ -54,6 +56,7 @@ Res mult_div(const char* s) {
 	return result;
 }
 
+//adding and substracting (second priority)
 Res add_sub(const char* s) {
 	Res result;
 	Res left = mult_div(s++);
