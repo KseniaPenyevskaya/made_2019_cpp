@@ -1,4 +1,3 @@
-@ -0,0 +1,71 @@
 #include <iostream>
 
 class Allocator
