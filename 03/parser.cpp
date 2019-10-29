@@ -11,16 +11,17 @@ void GetToken(char* text, void(*tokenFound)(), void(*TokenNumber)(Token tokNumb)
 		Token newToken;
 		newToken.type = number;
 		newToken.str = "";
+		//check if symbol is separator
 		while (!(std::isspace(*s)) && (*s != '\0')) {
 			newToken.str.push_back(*s);
-			newToken.type = ((*s >= '0' && *s <= '9') && (newToken.type == number)) ? number : string;
+			newToken.type = ((*s >= '0' && *s <= '9') && (newToken.type == number)) ? number : string; // determine type of Token
 			s++;
 			}
 		
 		if (newToken.str!="") {
 			tokenFound();
 		}
-		
+		// choosing callback function based on Token's type
 		switch (newToken.type) {
 		case number:
 			TokenNumber(newToken);
