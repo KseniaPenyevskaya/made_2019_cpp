@@ -65,7 +65,6 @@ int main(int argc, char* argv[]) {
 				std::cerr << e.what();
 				return 2;
 			}
-			//std::cout << std::hex << ptr;
 
 		}
 		else {
