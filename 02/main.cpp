@@ -7,8 +7,7 @@ public:
 	Allocator(size_t maxSize);
 	~Allocator();
 	char* alloc(size_t size);
-	//void reset();
-	void free();
+	void reset();
 private:
 	char* ptrBuff;
 	size_t sizeBuff;
@@ -42,7 +41,7 @@ char* Allocator::alloc(size_t size) {
 	}
 }
 
-void Allocator::free() {
+void Allocator::reset() {
 	offset = 0;
 }
 
@@ -59,7 +58,7 @@ int main(int argc, char* argv[]) {
 
 			try {
 				Allocator a(static_cast<size_t>(inputSizeBuf));
-				a.free();
+				a.reset();
 				char* ptr = a.alloc(static_cast<size_t>(inputAllocSize));
 			}
 			catch (std::exception & e) {
