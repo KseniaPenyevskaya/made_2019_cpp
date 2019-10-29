@@ -1,7 +1,6 @@
 #include <cstring>
-#include "parser.h"
 #include <cctype>
-
+#include "parser.h"
 
 void GetToken(char* text, void(*tokenFound)(), void(*TokenNumber)(Token tokNumb),
 	void(*TokenString)(Token tokStr)) {
@@ -33,7 +32,6 @@ void GetToken(char* text, void(*tokenFound)(), void(*TokenNumber)(Token tokNumb)
 		s++;
 	}
 }
-
 
 void ParseText(char* text, void(*Start)(), void(*Finish)(), void(*TokenFound)(),void(*TokenNumber)(Token tokNumb),
 	void(*TokenString)(Token tokStr)) {
